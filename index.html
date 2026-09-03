@@ -5,25 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oráculo de Homero</title>
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #0d1117;
-            color: #ffffff;
+            color: #c9d1d9;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            margin: 0;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
         }
-        h1 { color: #f0a500; }
+        .container {
+            max-width: 600px;
+            background-color: #161b22;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            border: 1px solid #30363d;
+        }
+        h1 {
+            color: #f0a500;
+            margin-bottom: 16px;
+            font-size: 2rem;
+        }
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #8b949e;
+            margin-bottom: 24px;
+        }
+        .instructions {
+            font-size: 0.95rem;
+            color: #d2a8ff;
+            background-color: rgba(187, 128, 255, 0.15);
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid rgba(187, 128, 255, 0.3);
+        }
     </style>
 </head>
 <body>
-    <h1>Consultoria do Oráculo de Homero</h1>
-    <p>O widget do chat deve aparecer no canto inferior direito em instantes.</p>
 
-    <!-- COLE AQUI O SCRIPT DA ABA EMBED DO WATSON -->
+    <div class="container">
+        <h1>Oráculo de Homero</h1>
+        <p>Bem-vindo! O guardião da sabedoria épica e dos mitos está pronto para atender às suas consultas.</p>
+        <div class="instructions">
+            Clique no ícone de chat no canto inferior direito para iniciar seu diálogo com Homero.
+        </div>
+    </div>
+
+    <!-- CÓDIGO DO IBM WATSON ASSISTANT -->
+    <script>
+      window.watsonAssistantChatOptions = {
+        integrationID: "f4f072f3-18c2-4f4c-be5d-5f8fd3b73572",
+        region: "us-south",
+        serviceInstanceID: "62a79eda-3289-43ce-858c-ebaaac0e9a11",
+        onLoad: async (instance) => { await instance.render(); }
+      };
+      setTimeout(function(){
+        const t=document.createElement('script');
+        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+        document.head.appendChild(t);
+      });
+    </script>
 
 </body>
 </html>
