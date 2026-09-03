@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oráculo de Zeus</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Consultoria do Oráculo</h1>
+    <p>Clique no ícone de chat no canto inferior direito para falar com Zeus.</p>
+
+    <<script>
+  window.watsonAssistantChatOptions = {
+    integrationID: "cf81d6ba-9c86-48c9-8ea5-035efe88bb34", // The ID of this integration.
+    region: "https://integrations.us-south.assistant.watson.appdomain.cloud", // The region your integration is hosted in.
+    serviceInstanceID: "62a79eda-3289-43ce-858c-ebaaac0e9a11", // The ID of your service instance.
+    onLoad: async (instance) => { await instance.render(); }
+  };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+    document.head.appendChild(t);
+  });
+</script>>
+
+</body>
+</html>
